@@ -1,0 +1,14 @@
+input.form-control {
+    border-radius: $input-border-radius
+}
+
+.Form {
+    &__Actions {
+        display: flex;
+        justify-content: flex-end
+    }
+
+    &__Error {
+        color: $color-text-error
+    }
+}

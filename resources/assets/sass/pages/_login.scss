@@ -1,0 +1,57 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+    background: url('../images/background.jpg') no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px
+}
+
+.LoginPanel {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    width: 80%;
+
+    hr {
+        border-color: #DCDCDC
+    }
+    
+    h1 {
+        margin: 0 0 20px 0;
+        text-align: center;
+        font-size: 2em
+    }
+    
+    &__FormActions {
+        display: flex;
+        justify-content: space-between
+    }
+
+}
+.LoginPanel__UserActions {
+    display: flex;
+    flex-direction: column
+}
+
+@media (min-width: $media-breakpoint-small) {
+    .LoginPanel {
+        width: 55%;
+    }
+}
+
+@media (min-width: $media-breakpoint-medium) {
+    .LoginPanel {
+        width: 40%
+    }
+}
+
+@media (min-width: $media-breakpoint-large) {
+    .LoginPanel {
+        width: 25%
+    }
+}

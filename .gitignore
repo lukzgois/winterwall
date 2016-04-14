@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+.azk
+database/testing.sqlite
+public/css/
+public/js
+public/images
