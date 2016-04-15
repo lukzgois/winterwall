@@ -4,7 +4,7 @@ namespace App\Domain\Repository;
 
 abstract class CrudRepository extends BaseRepository
 {
-        /**
+    /**
      * Updated model data, using $data
      * The sequence performs the Model update.
      *

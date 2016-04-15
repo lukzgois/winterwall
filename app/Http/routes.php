@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => 'guest'], function() {
+Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', ['as' => 'login.index', 'uses' => 'AuthController@index']);
     Route::post('/login', ['as' => 'login.store', 'uses' => 'AuthController@login']);
     Route::get('/register', ['as' => 'register.index', 'uses' => 'RegisterController@index']);
@@ -19,7 +19,7 @@ Route::group(['middleware' => 'guest'], function() {
 });
 
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', ['as' =>'logout', 'uses' => 'AuthController@logout']);
     Route::get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
 });
