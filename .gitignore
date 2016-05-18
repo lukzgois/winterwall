@@ -9,3 +9,5 @@ database/testing.sqlite
 public/css/
 public/js
 public/images
+todo
+*.todo

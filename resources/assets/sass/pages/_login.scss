@@ -18,7 +18,9 @@ body {
     width: 80%;
 
     hr {
-        border-color: #DCDCDC
+        border-color: #DCDCDC;
+        margin-top: 15px;
+        margin-bottom: 10px;
     }
     
     h1 {
@@ -30,6 +32,15 @@ body {
     &__FormActions {
         display: flex;
         justify-content: space-between
+    }
+
+    &__Success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
+        border-radius: 0;
+        padding: 5px;
+        margin-bottom: 15px;
     }
 
 }

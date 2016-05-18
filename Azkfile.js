@@ -38,7 +38,7 @@ systems({
     shell: "/bin/bash",
     wait: 20,
     mounts: {
-      '/var/lib/postgresql/data': persistent("#{system.name}-data"),
+      '/var/lib/postgresql/data': persistent("winterwall-dabatase"),
     },
     ports: {
       // exports global variables: "#{net.port.data}"
@@ -48,7 +48,7 @@ systems({
       // set instances variables
       POSTGRES_USER: "azk",
       POSTGRES_PASS: "azk",
-      POSTGRES_DB  : "#{manifest.dir}",
+      POSTGRES_DB  : "winterwall",
     },
     export_envs: {
       // check this gist to configure your database

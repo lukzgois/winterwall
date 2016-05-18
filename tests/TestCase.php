@@ -1,7 +1,11 @@
 <?php
 
+require 'helpers/FileHelper.php';
+
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
+    use FileHelper;
+
     /**
      * The base URL to use while testing the application.
      *

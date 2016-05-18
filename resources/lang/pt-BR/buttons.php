@@ -2,5 +2,6 @@
 
 return [
     'register' => 'Cadastrar',
-    'login' => 'Login'
+    'login' => 'Login',
+    'send-password-recovery' => 'Enviar recuperação de senha'
 ];
