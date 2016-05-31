@@ -1,10 +1,10 @@
 <?php
 
-use Hash;
 use App\Domain\Users\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterTest extends TestCase
 {

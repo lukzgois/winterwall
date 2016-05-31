@@ -1,11 +1,12 @@
 <?php
 
+use App\Domain\Auth\PasswordReset as PasswordResetModel;
 use App\Domain\Users\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 
-class PasswordReset extends TestCase
+class PasswordResetTest extends TestCase
 {
     use DatabaseTransactions;
 
@@ -37,6 +38,11 @@ class PasswordReset extends TestCase
             ->press('Enviar recuperação de senha')
             ->see('Um link para redefinição de senha foi enviado para o seu e-mail.');
 
-        $this->seeInFile('Link', storage_path('logs/laravel.log'));
+        $token = PasswordResetModel::where('email', $user->email)->first();
+
+        $this->assertNotNull($token);
+        $this->seeInFile("Olá {$user->name}", storage_path('logs/laravel.log'));
+        $this->seeInFile($token->token, storage_path('logs/laravel.log'));
     }
 }
+

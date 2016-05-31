@@ -5,7 +5,7 @@
 systems({
   winterwall: {
     // Dependent systems
-    depends: ["database"],
+    depends: ["database", "mail"],
     // More images:  http://images.azk.io
     image: {"docker": "lukz/nginx-php-fpm"},
     // Steps to execute before running instances
@@ -61,5 +61,22 @@ systems({
       DATABASE_ENV_PASSWORD: "#{envs.POSTGRES_PASS}",
       DATABASE_ENV_DB  : "#{envs.POSTGRES_DB}",
     },
+  },
+  // MailCatcher system
+  mail: {
+    // Dependent systems
+    depends: [],
+    // More images:  http://images.azk.io
+    image: {"docker": "schickling/mailcatcher"},
+    http: {
+      domains: [
+        "#{system.name}.#{azk.default_domain}",
+      ],
+    },
+    ports: {
+      // exports global variables
+      http: "1080/tcp",
+      smtp: "1025/tcp",
+    }
   },
 });

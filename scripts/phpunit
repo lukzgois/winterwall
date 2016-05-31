@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# set some environment variables
+# this is made normaly in the phpunit.xml file, but in the container some of this variables exists
+# and cannot be overrided. So we need to do this in a bash script
+export APP_ENV=testing 
+export CACHE_DRIVER=array
+export SESSION_DRIVER=array
+export QUEUE_DRIVER=sync
+export DB_CONNECTION=sqlite
+export DB_HOST=testing.sqlite
+export MAIL_DRIVER=log
+
+vendor/bin/phpunit "$@"
