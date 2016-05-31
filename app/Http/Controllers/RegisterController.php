@@ -8,11 +8,24 @@ use Auth;
 
 class RegisterController extends Controller
 {
+    /**
+     * Show the register form
+     *
+     * @return Illuminate\View\View
+     */
     public function index()
     {
         return view('register.index');
     }
 
+    /**
+     * Register a new user
+     *
+     * @param  Register       $request
+     * @param  UserRepository $repository
+     *
+     * @return Illuminate\Http\Response
+     */
     public function store(
         Register $request,
         UserRepository $repository

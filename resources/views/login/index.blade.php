@@ -43,7 +43,7 @@
         <hr />
         
         <div class="LoginPanel__UserActions">
-            <a href="#">{{ trans('login.forgot-password') }}</a>
+            <a href="{{ route('login.forgot-password-form') }}">{{ trans('login.forgot-password') }}</a>
             <a href="{{ route('register.index') }}">{{ trans('register.register') }}</a>
         </div>
 

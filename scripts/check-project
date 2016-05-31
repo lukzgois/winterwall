@@ -1,0 +1,25 @@
+#!/bin/bash
+echo "Checking Doc Blocks";
+echo "=================================================================="
+vendor/bin/phpdoccheck -d app --skip-classes
+
+echo ""
+echo "Checking Code Standard";
+echo "=================================================================="
+vendor/bin/phpcs --standard=PSR1,PSR2 --ignore="*/**/resources" app
+
+echo ""
+echo "Checking Duplicated Code";
+echo "=================================================================="
+vendor/bin/phpcpd app
+
+echo ""
+echo "Checking for Debug Code";
+echo "=================================================================="
+git diff --name-only | GREP_COLOR='4;5;37;41' xargs grep --color -ne 'console.log('
+git diff --name-only | GREP_COLOR='4;5;37;41' xargs grep --color -ne 'dd('
+
+echo ""
+echo "Running tests";
+echo "=================================================================="
+./scripts/reset-testing-db && ./scripts/phpunit

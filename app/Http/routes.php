@@ -16,6 +16,11 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/login', ['as' => 'login.store', 'uses' => 'AuthController@login']);
     Route::get('/register', ['as' => 'register.index', 'uses' => 'RegisterController@index']);
     Route::post('/register', ['as' => 'register.store', 'uses' => 'RegisterController@store']);
+    Route::get('/forgot-password', [
+        'as' => 'login.forgot-password-form',
+        'uses' => 'AuthController@forgotPasswordForm'
+    ]);
+    Route::post('/forgot-password', ['as' => 'login.forgot-password', 'uses' => 'AuthController@forgotPassword']);
 });
 
 

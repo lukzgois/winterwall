@@ -83,4 +83,35 @@ abstract class BaseRepository
         }
         return $this->newQuery()->find($id);
     }
+
+    /**
+     * Get all single record by a field.
+     *
+     * @param  string  $field
+     * @param  mixed  $value
+     * @param  string  $operator
+     * @param  boolean $fail
+     * @return mixed
+     */
+    public function findBy($field, $value, $operator = '=', $fail = false)
+    {
+        if ($fail) {
+            return $this->newQuery()->where($field, $operator, $value)->firstOrFail();
+        }
+
+        return $this->newQuery()->where($field, $operator, $value)->first();
+    }
+
+    /**
+     * Get multiple records by a field.
+     *
+     * @param  string  $field
+     * @param  mixed  $value
+     * @param  string  $operator
+     * @return mixed
+     */
+    public function findAllBy($field, $value, $operator = '=')
+    {
+        return $this->newQuery()->where($field, $operator, $value)->get();
+    }
 }
