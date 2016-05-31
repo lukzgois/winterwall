@@ -9,7 +9,7 @@ php:
 
 before_script:
   - touch database/testing.sqlite
-  - php artisan migrate --database=sqlite
   - composer install
   - npm install
   - gulp
+  - php artisan migrate --database=sqlite
